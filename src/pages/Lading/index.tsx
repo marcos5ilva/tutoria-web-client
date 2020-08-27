@@ -9,7 +9,7 @@ import './styles.css';
 import api from '../../services/api';
 
 const Landing = () => {
-    const[totalConecctions, setTotalConnections] = useState(0);
+    const[totalConnections, setTotalConnections] = useState(0);
     useEffect(()=>{
         api.get('/connections').then( resp=>{
             const total = resp.data.total;
@@ -40,7 +40,7 @@ const Landing = () => {
                         Teach
                     </Link>
                 </div>
-                <span className="total-connections">Total of {totalConecctions} student-tutors connected <img src={heartIcon} alt="H /eart icon" /></span>
+                <span className="total-connections">Total of {totalConnections} student-tutors connected <img src={heartIcon} alt="H /eart icon" /></span>
             </div>
         </div>
     )
