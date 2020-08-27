@@ -1,0 +1,49 @@
+#page-tutor-list{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+#search-tutors{
+    margin-top: 3.2rem;
+}
+
+#search-tutors  label{
+    color: var(--color-text-in-primary);
+}
+
+
+
+#page-tutor-list main {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+
+@media(min-width: 700px){
+    #page-tutor-list{
+        max-width: 100%;
+    }
+
+    #search-tutors{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 16px;
+        position: absolute;
+        bottom: -32px;
+    }
+
+    #search-tutors .input-block + .input-block,
+    #search-tutors .select-block + .select-block{
+        margin-top: 0;
+    }
+
+    #page-tutor- list main{
+        padding: 3.2rem 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+
+}
