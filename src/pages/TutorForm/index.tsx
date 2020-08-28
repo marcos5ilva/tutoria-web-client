@@ -1,4 +1,5 @@
 import React, {useState, FormEvent} from 'react';
+import {useHistory} from 'react-router-dom';
 import PageHeader from '../../components/PageHeader'
 import Input from '../../components/Input';
 import waringIcon from '../../assets/images/icons/warning.svg'
@@ -9,6 +10,7 @@ import api from '../../services/api';
 
 
 const TutorForm = () => {
+    const history = useHistory();
     const [name, setName]= useState('');
     const [avatar, setAvatar] = useState('');
     const [whatsapp, setWhatsapp]=useState('');
@@ -52,6 +54,7 @@ function handleCreateLesson(e: FormEvent){
     })
     .then(()=>{
         alert('Successfully registered!');
+        history.push('/');
     })
     .catch((error)=>{
         alert('Error on registering');
