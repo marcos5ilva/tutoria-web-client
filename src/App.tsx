@@ -1,6 +1,5 @@
 import React from 'react';
 import './assets/styles/global.css'
-import Landing from './pages/Lading';
 import Routes from './routes';
 
 function App() {
