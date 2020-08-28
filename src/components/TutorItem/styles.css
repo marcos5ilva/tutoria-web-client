@@ -56,7 +56,8 @@
     display:  block;
 }
 
-.tutor-item footer button{
+.tutor-item footer a{
+    text-decoration: none;
     width: 20rem;
     height: 5.6rem;
     background: var(--color-secondary);
@@ -71,7 +72,7 @@
     transition: 0.2s;
 }
 
-.tutor-item footer button:hover{
+.tutor-item footer a:hover{
     background: var(--color-secondary-dark);
 }
 
@@ -91,13 +92,13 @@
         margin-left: 1.6rem;
     }
 
-    .tutor-item footer button{
+    .tutor-item footer a{
         width: 24.5rem;
         font-size: 1.6rem;
         justify-content: center;
     }
 
-    .tutor-item footer button img{
+    .tutor-item footer a  img{
         margin-right: 1.6rem;
     }
 
