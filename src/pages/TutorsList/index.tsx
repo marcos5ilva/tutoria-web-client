@@ -1,20 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import PageHeader from '../../components/PageHeader';
-import TutorItem from '../../components/TutorItem';
+import TutorItem, {Tutor} from '../../components/TutorItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select/index';
 import './styles.css';
+import api from '../../services/api';
 
 
 
 const TutorsList = () => {
+    const [tutors,setTutors] = useState([]);
     const [subject, setSubject] = useState('');
-    const[weekDay, setWeekDay] = useState('');
+    const[week_day, setWeekDay] = useState('');
     const[time, setTime] = useState('');
 
-    function handleSearchTutors(){
-
+   async function handleSearchTutors(e : FormEvent){
+        e.preventDefault();
+       const resp = await  api.get('lessons', {
+            params:{
+                subject,
+                week_day,
+                time
+            }
+        });
+        setTutors(resp.data);
+       
     }
+
+
 
     return (
 
@@ -31,7 +44,7 @@ const TutorsList = () => {
                     ]}/>
                     <Select name="week_day"
                     label="Week day"
-                    value={weekDay}
+                    value={week_day}
                     onChange={(e)=>{setWeekDay(e.target.value)}}
 
                     options={[
@@ -49,15 +62,15 @@ const TutorsList = () => {
                         value={time}
                         onChange={(e)=>{setTime(e.target.value)}}
                     />
-                    
+
                     <button type="submit">Search</button>
                 </form>
             </PageHeader>
             <main>
-                <TutorItem />
-                <TutorItem />
-                <TutorItem />
-                <TutorItem />
+                {tutors.map((tutor: Tutor, index)=>{
+                    return <TutorItem  key={index} tutor={tutor}/>
+                })}
+            
             </main>
         </div>)
 }
