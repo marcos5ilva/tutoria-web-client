@@ -112,6 +112,10 @@ transition: background-color 0.2s;
         font-size: 3.6rem;
     }
 
+    .logo-container h2{
+        margin-left: 3.5rem;
+    }
+
     .logo-container img {
         height: 100%;
     }
