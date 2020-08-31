@@ -12,10 +12,11 @@
 
 .logo-container  img{
     height: 6rem;
+    margin-top: 3.5rem;
 }
 
 .hero-img{
-    width: 100%;
+   width: 100%;
 }
 
 .logo-container{
